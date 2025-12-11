@@ -78,7 +78,7 @@ async function processEmoji(folderPath: string): Promise<EmojiEntry | null> {
         return null
     }
 
-    const baseUnicode = metadata.unicode.toLowerCase()
+    const baseUnicode = metadata.unicode.toLowerCase().replace(/\s+/g, '-')
     const skinTones: string[] = []
     const threeDPath = join(folderPath, '3D')
 
