@@ -1,0 +1,6 @@
+node_modules/
+fluentui-emoji/
+generated/
+*.log
+.DS_Store
+.idea

@@ -1,0 +1,38 @@
+{
+  "name": "fluent-optimized",
+  "version": "1.0.0",
+  "description": "Microsoft Fluent Emoji optimized for web: trimmed WebP and SVG",
+  "type": "module",
+  "files": [
+    "generated/**/*"
+  ],
+  "exports": {
+    "./3d/trimmed/*": "./generated/3d/trimmed/*",
+    "./3d/original/*": "./generated/3d/original/*",
+    "./flat/*": "./generated/flat/*",
+    "./map": "./generated/emoji-map.json"
+  },
+  "scripts": {
+    "build": "bun run scripts/build.ts",
+    "clean": "rm -rf generated fluentui-emoji"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/troshkindm/fluent-optimized"
+  },
+  "keywords": [
+    "emoji",
+    "fluent",
+    "microsoft",
+    "webp",
+    "svg",
+    "optimized"
+  ],
+  "devDependencies": {
+    "@types/bun": "latest",
+    "sharp": "^0.34.5"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
