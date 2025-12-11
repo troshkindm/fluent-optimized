@@ -58,7 +58,7 @@ import emojiMap from 'fluent-optimized/map'
 
 Requires [Bun](https://bun.sh) and Git.
 ```bash
-git clone https://github.com/ppmprince/fluent-optimized
+git clone https://github.com/troshkindm/fluent-optimized
 cd fluent-optimized
 bun install
 bun run build
