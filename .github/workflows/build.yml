@@ -1,9 +1,16 @@
 name: Build and Publish
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'scripts/**'
+      - 'package.json'
+      - '.github/workflows/build.yml'
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * 0'  # weekly on sunday
+    - cron: '0 0 * * 0'
 
 jobs:
   build:
@@ -31,6 +38,12 @@ jobs:
       - name: Update package version
         run: |
           bun x json -I -f package.json -e "this.version='${{ steps.version.outputs.version }}'"
+
+      - name: Setup Node for npm
+        uses: actions/setup-node@v6
+        with:
+          node-version: 'lts/*'
+          registry-url: 'https://registry.npmjs.org'
 
       - name: Publish to npm
         run: npm publish --access public
